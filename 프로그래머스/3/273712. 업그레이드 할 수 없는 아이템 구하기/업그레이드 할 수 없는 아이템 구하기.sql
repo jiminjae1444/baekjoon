@@ -1,0 +1,2 @@
+-- 코드를 작성해주세요
+select ITEM_INFO.item_id ,ITEM_INFO.item_name,ITEM_INFO.rarity from ITEM_INFO join item_tree on ITEM_INFO.item_id = item_tree.item_id where item_info.item_id not in(select PARENT_ITEM_ID from item_tree where PARENT_ITEM_ID is not null) order by item_info.item_id desc;
